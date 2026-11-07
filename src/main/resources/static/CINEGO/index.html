@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CINEGO - Đặt vé xem phim</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                CINE<span>GO</span>
+            </a>
+
+            <nav class="menu">
+                <a href="index.html">Trang chủ</a>
+                <a href="danh-muc.html">Phim</a>
+                <a href="tim-kiem.html">Tìm kiếm</a>
+                <a href="yeu-thich.html">Yêu thích</a>
+                <a href="lich-su.html">Lịch sử</a>
+                <a href="lien-he.html">Liên hệ</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="dang-nhap.html" class="btn-login">
+                    Đăng nhập
+                </a>
+
+                <a href="dang-ky.html" class="btn-register">
+                    Đăng ký
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+
+   <section class="hero">
+
+    <div class="hero-slide active">
+        <div class="container hero-content">
+
+            <div class="hero-text">
+                <p class="hero-small">CINEGO CINEMA</p>
+
+                <h1>
+                    Trải nghiệm điện ảnh
+                    <span>đỉnh cao</span>
+                </h1>
+
+                <p>
+                    Đặt vé xem phim nhanh chóng,
+                    tiện lợi và dễ dàng.
+                </p>
+
+                <a href="danh-muc.html" class="btn-primary">
+                    Xem phim ngay
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="slider-buttons">
+        <button onclick="prevSlide()">❮</button>
+        <button onclick="nextSlide()">❯</button>
+    </div>
+
+    <div class="slider-dots">
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+    </div>
+
+</section>
+
+    <!-- COUNTDOWN -->
+    <section class="promotion">
+
+        <div class="container promotion-content">
+
+            <div>
+                <p class="promotion-title">
+                    🎬 Ưu đãi đặc biệt
+                </p>
+
+                <h2>
+                    Giảm giá vé trong hôm nay
+                </h2>
+            </div>
+
+            <div class="countdown">
+
+                <div>
+                    <strong id="days">00</strong>
+                    <span>Ngày</span>
+                </div>
+
+                <div>
+                    <strong id="hours">00</strong>
+                    <span>Giờ</span>
+                </div>
+
+                <div>
+                    <strong id="minutes">00</strong>
+                    <span>Phút</span>
+                </div>
+
+                <div>
+                    <strong id="seconds">00</strong>
+                    <span>Giây</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHIM NỔI BẬT -->
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-title">
+                <div>
+                    <p>PHIM ĐANG CHIẾU</p>
+                    <h2>Phim nổi bật</h2>
+                </div>
+
+                <a href="danh-muc.html">
+                    Xem tất cả →
+                </a>
+            </div>
+
+
+            <!-- JavaScript sẽ đưa phim vào đây -->
+            <div id="featuredMovies" class="movie-grid"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GIỚI THIỆU -->
+    <section class="about-home">
+
+        <div class="container about-content">
+
+            <div>
+                <p class="section-label">VỀ CINEGO</p>
+
+                <h2>
+                    Đặt vé xem phim
+                    <span>nhanh chóng</span>
+                </h2>
+
+                <p>
+                    CINEGO giúp bạn tìm kiếm phim,
+                    xem lịch chiếu và đặt vé trực tuyến
+                    một cách đơn giản.
+                </p>
+
+                <a href="ve-chung-toi.html" class="btn-primary">
+                    Tìm hiểu thêm
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <h2>CINEGO</h2>
+
+                <p>
+                    Website đặt vé xem phim trực tuyến.
+                </p>
+            </div>
+
+            <div>
+                <h3>Liên kết</h3>
+
+                <a href="index.html">Trang chủ</a>
+                <a href="danh-muc.html">Phim</a>
+                <a href="lien-he.html">Liên hệ</a>
+            </div>
+
+            <div>
+                <h3>Thông tin</h3>
+
+                <p>📞 0123 456 789</p>
+                <p>✉ cinego@gmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 CINEGO. All rights reserved.
+        </div>
+
+    </footer>
+
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" onclick="backToTop()">
+        ↑
+    </button>
+
+
+    <!-- POPUP -->
+    <div id="welcomePopup" class="popup">
+
+        <div class="popup-box">
+
+            <button class="popup-close" onclick="closePopup()">
+                ×
+            </button>
+
+            <h2>🎬 Chào mừng đến CINEGO</h2>
+
+            <p>
+                Đặt vé xem phim nhanh chóng và tiện lợi.
+            </p>
+
+            <a href="danh-muc.html" class="btn-primary">
+                Xem phim
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

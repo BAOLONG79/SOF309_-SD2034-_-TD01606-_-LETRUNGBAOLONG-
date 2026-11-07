@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Đăng ký - CINEGO</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                CINE<span>GO</span>
+            </a>
+
+            <nav class="nav">
+                <a href="index.html">Trang chủ</a>
+                <a href="danh-muc.html">Phim</a>
+                <a href="tim-kiem.html">Tìm kiếm</a>
+                <a href="yeu-thich.html">Yêu thích</a>
+                <a href="lich-su.html">Lịch sử</a>
+                <a href="lien-he.html">Liên hệ</a>
+            </nav>
+
+            <div class="header-buttons">
+                <a href="dang-nhap.html" class="btn-login">Đăng nhập</a>
+                <a href="dang-ky.html" class="btn-primary">Đăng ký</a>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ĐĂNG KÝ -->
+    <section class="section register-section">
+
+        <div class="container">
+
+            <div class="form-box">
+
+                <h1>Đăng ký tài khoản</h1>
+
+                <p class="form-description">
+                    Tạo tài khoản CINEGO để đặt vé và quản lý lịch sử đặt vé.
+                </p>
+
+
+                <form id="registerForm">
+
+                    <!-- Họ tên -->
+                    <div class="form-group">
+
+                        <label for="registerName">
+                            Họ và tên
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerName"
+                            placeholder="Nhập họ và tên"
+                        >
+
+                        <small id="nameError" class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="registerEmail">
+                            Email
+                        </label>
+
+                        <input
+                            type="email"
+                            id="registerEmail"
+                            placeholder="example@gmail.com"
+                        >
+
+                        <small id="emailError" class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Số điện thoại -->
+                    <div class="form-group">
+
+                        <label for="registerPhone">
+                            Số điện thoại
+                        </label>
+
+                        <input
+                            type="text"
+                            id="registerPhone"
+                            placeholder="Nhập số điện thoại"
+                        >
+
+                        <small id="phoneError" class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Mật khẩu -->
+                    <div class="form-group">
+
+                        <label for="registerPassword">
+                            Mật khẩu
+                        </label>
+
+                        <input
+                            type="password"
+                            id="registerPassword"
+                            placeholder="Nhập mật khẩu"
+                        >
+
+                        <small id="passwordError" class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Nhập lại mật khẩu -->
+                    <div class="form-group">
+
+                        <label for="registerConfirmPassword">
+                            Nhập lại mật khẩu
+                        </label>
+
+                        <input
+                            type="password"
+                            id="registerConfirmPassword"
+                            placeholder="Nhập lại mật khẩu"
+                        >
+
+                        <small id="confirmPasswordError" class="error-message"></small>
+
+                    </div>
+
+
+                    <!-- Nút đăng ký -->
+                    <button
+                        type="submit"
+                        class="btn-primary register-button"
+                    >
+                        Đăng ký
+                    </button>
+
+
+                    <!-- Thông báo -->
+                    <p id="registerMessage" class="form-message"></p>
+
+
+                    <p class="login-link">
+                        Đã có tài khoản?
+                        <a href="dang-nhap.html">
+                            Đăng nhập
+                        </a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+                    <h3>CINEGO</h3>
+
+                    <p>
+                        Đặt vé xem phim online nhanh chóng,
+                        tiện lợi và dễ dàng.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Liên kết</h3>
+
+                    <a href="index.html">Trang chủ</a>
+                    <a href="danh-muc.html">Phim</a>
+                    <a href="lien-he.html">Liên hệ</a>
+                </div>
+
+                <div>
+                    <h3>Liên hệ</h3>
+
+                    <p>Email: support@cinego.vn</p>
+                    <p>Hotline: 1900 1234</p>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                © 2026 CINEGO. All rights reserved.
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

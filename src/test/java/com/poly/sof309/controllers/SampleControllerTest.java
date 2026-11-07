@@ -5,38 +5,48 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * =========================================================================
- * [Y3] FILE TEST MẪU BẰNG JUNIT 5 CHO CONTROLLER
- * Sinh viên tham khảo file này để viết unit test cho các hàm trong Controller/Service
- * dựa theo bộ Test Case đã thiết kế ở Y2 (trong file docs/TEST_CASES.md).
- * =========================================================================
+ * [Y3] UNIT TEST CHO LOGIC XÁC THỰC TRANG CINEGO
  */
 public class SampleControllerTest {
 
     @Test
-    @DisplayName("TC_AUTH_01: Kiểm tra đăng nhập với thông tin hợp lệ")
-    public void testLoginSuccess() {
-        // Giả lập logic kiểm tra đăng nhập
-        String username = "admin";
-        String password = "123";
+    @DisplayName("TC_AUTH_01: Kiểm tra đăng nhập với tài khoản Admin hợp lệ")
+    public void testLoginAdminSuccess() {
+        String email = "admin@cinego.vn";
+        String password = "Admin123!";
         
-        boolean isValidUser = authenticate(username, password);
-        assertTrue(isValidUser, "Đăng nhập phải thành công với tài khoản đúng");
+        boolean isValidUser = authenticate(email, password);
+        assertTrue(isValidUser, "Đăng nhập phải thành công với tài khoản Admin đúng");
     }
 
     @Test
-    @DisplayName("TC_AUTH_02: Kiểm tra đăng nhập thất bại khi để trống mật khẩu")
+    @DisplayName("TC_AUTH_02: Kiểm tra đăng nhập thất bại khi sai mật khẩu")
+    public void testLoginWrongPassword() {
+        String email = "admin@cinego.vn";
+        String password = "sai_mat_khau";
+
+        boolean isValidUser = authenticate(email, password);
+        assertFalse(isValidUser, "Đăng nhập phải thất bại khi nhập sai mật khẩu");
+    }
+
+    @Test
+    @DisplayName("TC_AUTH_03: Kiểm tra đăng nhập thất bại khi để trống mật khẩu")
     public void testLoginEmptyPassword() {
-        String username = "admin";
+        String email = "admin@cinego.vn";
         String password = "";
 
-        boolean isValidUser = authenticate(username, password);
+        boolean isValidUser = authenticate(email, password);
         assertFalse(isValidUser, "Đăng nhập phải thất bại khi mật khẩu trống");
     }
 
-    // Hàm giả lập (Sinh viên thay bằng gọi trực tiếp Controller / Service của dự án web)
-    private boolean authenticate(String user, String pass) {
-        return "admin".equals(user) && "123".equals(pass);
+    // Hàm giả lập kiểm tra tài khoản theo thông tin CINEGO
+    private boolean authenticate(String email, String pass) {
+        if ("admin@cinego.vn".equals(email) && "Admin123!".equals(pass)) {
+            return true;
+        }
+        if ("longltbtd001606@gmail.com".equals(email) && "baolong792009@".equals(pass)) {
+            return true;
+        }
+        return false;
     }
 }
-
