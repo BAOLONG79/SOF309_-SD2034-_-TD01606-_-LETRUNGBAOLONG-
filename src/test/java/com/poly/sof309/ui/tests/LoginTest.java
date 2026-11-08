@@ -24,7 +24,7 @@ public class LoginTest {
 
     @Test
     public void testLoginFunction() {
-        driver.get("http://localhost:8080/CINEGO_ASM2_letrungbaolong/CINEGO/dang-nhap.html");
+        driver.get("http://127.0.0.1:5500/src/main/resources/static/CINEGO/dang-nhap.html");
         loginPage = new LoginPage(driver);
         loginPage.login("test@cinego.com", "123456");
     }
