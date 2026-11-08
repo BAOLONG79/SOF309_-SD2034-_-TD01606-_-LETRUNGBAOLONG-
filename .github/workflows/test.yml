@@ -23,12 +23,19 @@ jobs:
           cache: maven
 
       - name: Start Spring Boot App
-        run: mvn spring-boot:run &
-        # Lệnh & giúp ứng dụng chạy ngầm để GitHub Actions tiếp tục chuyển sang bước chạy test
-
-      - name: Wait for Server to Start
-        run: sleep 10
-        # Dừng 10 giây để đảm bảo server đã khởi động xong cổng 8080
+        run: |
+          mvn spring-boot:run &
+          echo "Waiting for Spring Boot to start..."
+          # Vòng lặp chờ tối đa 30 giây cho đến khi cổng 8080 mở
+          for i in {1..30}; do
+            if curl -s http://localhost:8080/CINEGO_ASM2_letrungbaolong/CINEGO/dang-nhap.html > /dev/null; then
+              echo "Server started successfully!"
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "Server timed out!"
+          exit 1
 
       - name: Run Tests
         run: mvn clean test
